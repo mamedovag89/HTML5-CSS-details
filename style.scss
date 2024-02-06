@@ -1,0 +1,262 @@
+@import 'vars';
+@import 'mixins';
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  padding-left: calc(50% - $widthSite/2);
+  padding-right: calc(50% - $widthSite/2);
+}
+.filter-sort {
+  height: 132px;
+  padding-top: 39px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  gap: $gapGrid;
+}
+.filter {
+  padding-top: 13px;
+  width: 360px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+
+  &__content {
+    background-color: #fff;
+    padding-top: 0;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+
+  &[open] .filter_heading {
+    color: $colorSelectSite;
+  }
+
+  &[open] path {
+    fill: $colorSelectSite;
+  }
+  &__sumary {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-left: 16px;
+  }
+
+  &__item {
+    margin-top: 16px;
+  }
+  &__heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: &colorText;
+  }
+
+  &__link-box {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 24px 16px;
+  }
+  &__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+    &:hover {
+      color: $colorSelectSite;
+    }
+  }
+  &__head {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+    padding: 8px 11px 11px 11px;
+    border-bottom: 1px solid #ebebeb;
+    border-left: 5px solid $colorSelectSite;
+  }
+  &__item[open] .filter__head {
+    color: $colorSelectSite;
+  }
+}
+.sort {
+  padding-top: 12px;
+  display: flex;
+  gap: 18px;
+  &__details {
+    position: relative;
+  }
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__check {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+  }
+  &__check {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #636363;
+  }
+  &__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    box-shadow: 6px 4px 35px #040404(0, 0, 0, 0.21);
+    padding: 7px 30px 11px 9px;
+    position: absolute;
+    left: -9px;
+    top: 22px;
+  }
+}
+.header {
+  background-color: $backBlock;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 41px;
+    }
+  }
+}
+#burger {
+  position: absolute;
+  left: -999999px;
+  visibility: hidden;
+  &:checked ~ .nav {
+    right: -$widthBurgerMenu;
+  }
+}
+
+.box-content {
+  overflow: hidden;
+}
+.nav {
+  background: #fff;
+  box-shadow: 6px 4px 35px #040404(0, 0, 0, 0.21);
+  width: 232px;
+  padding: 32px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  transition: right 0.3s;
+}
+.top-head {
+  background: #f8f3f4;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: $colorSelectSite;
+  }
+}
+
+.bredcrumbs__link {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #636363;
+
+  &__site {
+    font-weight: 700;
+    color: $colorSelectSite;
+  }
+}
+
+.product-box {
+ width: 90%;
+ margin: 0 auto;
+ display: flex;
+ gap: 30px; 
+ justify-content: space-between;
+} 
+
+
+.product {
+    width: $thirdSite;
+    display: flex;
+    flex-direction: column;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__content {
+    background-color: #f8f3f4;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: $colorText;
+  }
+  &__text {
+    
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5d5d5d;
+  }
+  &__price {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F16D7F;
+
+  }
+}
